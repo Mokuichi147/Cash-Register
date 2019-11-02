@@ -1,0 +1,95 @@
+﻿<Window x:Class="Cash_Register.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cash_Register"
+        mc:Ignorable="d"
+        Title="Cash-Register" Height="830" Width="1310" MinWidth="1310" MinHeight="830">
+    <Grid HorizontalAlignment="Center" Height="790" VerticalAlignment="Center" Width="1290">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="725" VerticalAlignment="Top" Width="373" MinWidth="430" MinHeight="790">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="product_up" Content="∧" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="267" Height="46" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="24"/>
+            <Button x:Name="product_0" Content="None" HorizontalAlignment="Left" Height="112" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="267" Click="product_Click" FontSize="36"/>
+            <Button x:Name="product_1" Content="None" HorizontalAlignment="Left" Height="102" Margin="10,9.667,0,0" Grid.Row="2" VerticalAlignment="Top" Width="267" FontSize="36" Click="product_Click"/>
+            <Button x:Name="product_2" Content="None" HorizontalAlignment="Left" Margin="10,9.667,0,0" Grid.Row="3" VerticalAlignment="Top" Width="267" Height="112" FontSize="36" Click="product_Click"/>
+            <Button x:Name="product_3" Content="None" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="267" Height="112" FontSize="36" Click="product_Click"/>
+            <Button x:Name="product_4" Content="None" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="267" Height="113" Grid.RowSpan="2" FontSize="36" Click="product_Click"/>
+            <Button x:Name="product_down" Content="∨" HorizontalAlignment="Left" Margin="10,9.667,0,0" Grid.Row="7" VerticalAlignment="Top" Width="267" Height="47" FontSize="24"/>
+            <Button x:Name="count_up" Content="∧" Grid.Column="1" HorizontalAlignment="Left" Margin="10.333,10,0,0" VerticalAlignment="Top" Width="123" Height="46" FontSize="24" Click="count_up_Click"/>
+            <Button x:Name="count_0" Content="1" Grid.Column="1" HorizontalAlignment="Left" Margin="10.333,9.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="123" Height="112" FontSize="36" Click="count_Click"/>
+            <Button x:Name="count_1" Content="2" Grid.Column="1" HorizontalAlignment="Left" Height="102" Margin="10.333,9.667,0,0" Grid.Row="2" VerticalAlignment="Top" Width="123" FontSize="36" Click="count_Click"/>
+            <Button x:Name="count_2" Content="3" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="10.333,9.333,0,0" Grid.Row="3" VerticalAlignment="Top" Width="123" FontSize="36" Click="count_Click"/>
+            <Button x:Name="count_3" Content="4" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="10.333,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="123" FontSize="36" Click="count_Click"/>
+            <Button x:Name="count_down" Content="∨" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="10.333,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="123" FontSize="24" Click="count_down_Click"/>
+            <Button x:Name="add" Content="追加" Grid.Column="1" HorizontalAlignment="Left" Height="113" Margin="10.333,10.333,0,0" Grid.Row="6" VerticalAlignment="Top" Width="123" Grid.RowSpan="2" FontSize="36" Click="add_Click"/>
+        </Grid>
+        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="792" VerticalAlignment="Top" Width="430" Margin="0,-2,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="label" Content="追加済み一覧" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" VerticalAlignment="Top" Width="410" Grid.ColumnSpan="2" FontSize="24" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="label1" Content="合計" HorizontalAlignment="Left" Height="112" Margin="10,10,0,0" Grid.Row="2" Width="130" FontSize="36" VerticalAlignment="Top" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <Button x:Name="button14" Content="計算" HorizontalAlignment="Left" Height="112" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="195" Click="button14_Click" FontSize="36"/>
+            <Button x:Name="button15" Content="完了" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="9.667,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="195" Click="button15_Click" FontSize="36"/>
+            <Label x:Name="label4" Content="入力" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="195" FontSize="24" VerticalContentAlignment="Center"/>
+            <Label x:Name="label5" Content="おつり" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="46" Width="195" FontSize="24" VerticalContentAlignment="Center"/>
+            <Label x:Name="label6" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="9.667,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="195"/>
+            <Label x:Name="label7" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="9.667,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="195"/>
+            <Label x:Name="subtotal" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Height="112" Margin="145,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="275" FontWeight="Bold" HorizontalContentAlignment="Right" FontSize="36" VerticalContentAlignment="Center"/>
+            <ListView x:Name="shopping_cart" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="410" SelectionChanged="shopping_cart_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="商品名" Width="250" DisplayMemberBinding="{Binding name}" />
+                        <GridViewColumn Header="個数" Width="50" DisplayMemberBinding="{Binding count}" />
+                        <GridViewColumn Header="金額" Width="100" DisplayMemberBinding="{Binding subtotal}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="2" HorizontalAlignment="Left" Height="790" VerticalAlignment="Top" Width="430">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="267"/>
+            <Button x:Name="button16" Content="設定" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="10.333,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="123" FontSize="36"/>
+            <ListBox x:Name="listBox1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="638" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="410" SelectionChanged="listBox1_SelectionChanged">
+                <StackPanel Height="100" Width="100"/>
+            </ListBox>
+            <Label x:Name="Clock" Content="Label" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" Width="267" FontSize="30" FontWeight="Bold" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
